@@ -1,4 +1,6 @@
 import { lazy } from "react";
+import { Parallax } from "react-parallax";
+
 import IntroContent from "../../content/IntroContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
 import AboutContent from "../../content/AboutContent.json";
@@ -11,17 +13,20 @@ const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
 const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
+const PictureBlock = lazy(() => import("../../components/PictureBlock"));
 
 const Home = () => {
   return (
     <Container>
       <ScrollToTop />
-      <ContentBlock
+
+      <PictureBlock
         direction="right"
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
         icon="developer.svg"
+        background="img/20220713_150857_IMG_2727.JPG"
         id="intro"
       />
       <MiddleBlock
